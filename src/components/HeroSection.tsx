@@ -50,80 +50,72 @@ const HeroSection = () => {
               {/* Dynamic Island / Notch */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-20"></div>
 
-              <div className="flex justify-between items-end mb-8 pt-8">
-                <div className="text-2xl font-black tracking-tighter text-black">Tasks</div>
-                <div className="text-[10px] font-black tracking-widest text-primary uppercase pb-1">Oct 12</div>
+              <div className="flex justify-between items-center mb-8 pt-8">
+                <div className="text-3xl font-black tracking-tight text-black">Schedule</div>
+                <div className="flex gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/20"></div>
+                </div>
               </div>
               
-              <div className="space-y-3">
-                <div className="bg-[#F8F9FF] p-4 rounded-2xl flex items-center justify-between border border-primary/5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
-                      <CheckCircle2 size={12} className="text-white" />
-                    </div>
-                    <div className="text-sm font-bold text-black/30 line-through">Review product brief</div>
-                  </div>
-                  <div className="flex gap-1">
-                    <div className="w-1 h-3 bg-black/5 rounded-full"></div>
-                    <div className="w-1 h-3 bg-black/5 rounded-full"></div>
-                  </div>
+              <div className="relative flex-1">
+                {/* Time Markers */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 flex flex-col justify-between text-[8px] font-black text-black/20 uppercase tracking-widest py-2">
+                  <span>09 AM</span>
+                  <span>11 AM</span>
+                  <span>01 PM</span>
+                  <span>03 PM</span>
                 </div>
 
-                <div className="bg-white p-4 rounded-2xl flex items-center justify-between border border-black/[0.03] shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full border-2 border-black/10"></div>
-                    <div className="text-sm font-bold text-black/80">Sync with design team</div>
+                <div className="ml-10 space-y-4 h-full relative">
+                  {/* Focus Block */}
+                  <div className="bg-primary rounded-[1.5rem] p-5 shadow-lg shadow-primary/20">
+                    <div className="text-sm font-black text-white mb-0.5">Deep Work</div>
+                    <div className="text-[9px] font-bold text-white/60 uppercase tracking-widest">Focus Session</div>
                   </div>
-                  <div className="w-4 h-4 text-black/20">
-                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-full h-full">
-                        <path d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" strokeLinecap="round" strokeLinejoin="round"/>
-                     </svg>
+
+                  {/* Sync Block */}
+                  <div className="bg-accent rounded-[1.5rem] p-5 shadow-lg shadow-accent/20">
+                    <div className="text-sm font-black text-white mb-0.5">Sprint Sync</div>
+                  </div>
+
+                  {/* Current Time Indicator */}
+                  <div className="absolute -bottom-4 -left-10 right-0 flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-red-500 shadow-sm"></div>
+                    <div className="flex-1 h-[1px] bg-red-500/30 border-t border-dashed border-red-500"></div>
                   </div>
                 </div>
-
-                <div className="bg-white p-4 rounded-2xl flex items-center justify-between border border-black/[0.03] shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full border-2 border-black/10"></div>
-                    <div className="text-sm font-bold text-black/80">Draft Q4 roadmap</div>
-                  </div>
-                  <div className="px-2 py-0.5 rounded-md bg-primary/5 border border-primary/10 text-[8px] font-black text-primary uppercase">High</div>
-                </div>
-              </div>
-
-              <div className="mt-auto mb-4 p-4 rounded-2xl border-2 border-dashed border-black/[0.05] flex items-center justify-center gap-2">
-                <div className="text-black/20 font-black text-lg">+</div>
-                <div className="text-[10px] font-black text-black/30 uppercase tracking-widest">Add New Task</div>
               </div>
             </div>
 
             {/* Floating UI cards */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8 }}
-              className="absolute top-20 -left-16 md:-left-32 bg-[#333] p-4 rounded-3xl shadow-2xl flex items-center gap-4 z-20 min-w-[220px] border border-white/10"
+              transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-10 -left-64 md:-left-96 bg-[#333] p-5 rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.4)] flex items-center gap-4 z-20 min-w-[260px] border border-white/10"
             >
-              <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center text-primary shadow-lg shadow-black/20">
+              <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center text-primary shadow-lg">
                 <Zap size={22} fill="currentColor" />
               </div>
-              <div className="text-left font-bold">
+              <div className="text-left font-black">
                 <div className="text-[10px] text-white/50 uppercase tracking-widest mb-0.5">Focus Activated</div>
-                <div className="text-xs text-white">Deep Work · 45m Session</div>
+                <div className="text-sm text-white">Deep Work · 45m Session</div>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 }}
-              className="absolute bottom-20 -right-16 md:-right-32 bg-white p-4 rounded-3xl shadow-2xl flex items-center gap-4 z-20 min-w-[220px] border border-black/[0.03]"
+              transition={{ delay: 1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute bottom-10 -right-64 md:-right-96 bg-white p-5 rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.1)] flex items-center gap-4 z-20 min-w-[260px] border border-black/[0.03]"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent shadow-sm">
-                <CheckCircle2 size={24} />
+              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+                <CheckCircle2 size={24} strokeWidth={3} />
               </div>
-              <div className="text-left font-bold">
+              <div className="text-left font-black">
                 <div className="text-[10px] text-black/20 uppercase tracking-widest mb-0.5">Task Completed</div>
-                <div className="text-xs text-black/80">Q4 Product Roadmap Sync</div>
+                <div className="text-sm text-black/80">Q4 Product Roadmap Sync</div>
               </div>
             </motion.div>
           </motion.div>
