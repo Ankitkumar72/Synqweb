@@ -25,8 +25,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 group-hover:scale-110 transition-transform">
+        <Link href="/" className="flex items-center gap-3.5 group">
+          <div className="relative w-10 h-10 group-hover:scale-105 transition-transform duration-300">
              <Image 
                 src="/synq_logo_transparent.png" 
                 alt="Synq Logo" 
@@ -35,7 +35,7 @@ const Navbar = () => {
                 priority
              />
           </div>
-          <span className="text-xl font-extrabold tracking-tighter text-foreground">Synq</span>
+          <span className="text-3xl font-bold tracking-tighter text-foreground">Synq</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-10">

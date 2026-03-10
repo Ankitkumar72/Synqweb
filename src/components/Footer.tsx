@@ -17,28 +17,20 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
           <div className="col-span-2 lg:col-span-2 space-y-8">
-            <Link href="/" className="flex items-center gap-4 group">
-              <div className="relative w-10 h-10 bg-black rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden shadow-xl shadow-black/10">
-                <Image 
-                  src="/synq_logo_transparent.png" 
-                  alt="Synq Logo" 
-                  fill 
-                  className="object-contain p-2"
-                />
-              </div>
-              <span className="text-2xl font-black tracking-tighter text-black">Synq</span>
+            <Link href="/" className="group">
+              <span className="text-3xl font-bold tracking-tighter text-black group-hover:opacity-80 transition-opacity">Synq</span>
             </Link>
-            <p className="text-base text-foreground/60 max-w-sm leading-relaxed font-medium">
+            <p className="text-base text-foreground/50 max-w-sm leading-relaxed font-semibold">
               The ultimate flow-state workspace for modern knowledge workers.
             </p>
             <div className="flex gap-4">
-               <Link href="#" className="w-10 h-10 border border-foreground/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-sm">
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black">
+               <Link href="#" className="w-12 h-12 bg-white border border-black/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-[0_8px_30px_rgb(0,0,0,0.04)] border-black/[0.03]">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-black">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
                </Link>
-               <Link href="#" className="w-10 h-10 border border-foreground/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-sm text-black">
-                  <Github size={18} strokeWidth={2.5} />
+               <Link href="#" className="w-12 h-12 bg-white border border-black/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-black border-black/[0.03]">
+                  <Github size={20} strokeWidth={2.5} />
                </Link>
             </div>
           </div>
