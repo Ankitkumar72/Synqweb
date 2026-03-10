@@ -57,14 +57,9 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-foreground/5 gap-4">
+        <div className="flex flex-col md:flex-row justify-center items-center pt-8 border-t border-foreground/5 gap-4">
           <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/30">
             © 2026 Synq Productivity Inc.
-          </div>
-          <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-foreground/30">
-             <Link href="#" className="hover:text-foreground transition-colors">STATUS</Link>
-             <Link href="#" className="hover:text-foreground transition-colors">DOCS</Link>
-             <Link href="#" className="hover:text-foreground transition-colors">API</Link>
           </div>
         </div>
       </div>
