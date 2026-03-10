@@ -12,9 +12,9 @@ const FinalCTA = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl font-black mb-16 tracking-[-0.05em] leading-[0.9] text-black"
+            className="text-5xl md:text-7xl font-black mb-16 tracking-[-0.04em] leading-[1] text-black max-w-4xl mx-auto"
           >
-            Stop managing apps. <br /> Start doing work.
+            Stop managing apps. <br className="hidden md:block" /> Start doing work.
           </motion.h2>
           
           <motion.div

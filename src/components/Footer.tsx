@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github, Twitter } from "lucide-react";
+import { Github } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -17,23 +17,29 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
           <div className="col-span-2 lg:col-span-2 space-y-8">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-7 h-7 group-hover:scale-110 transition-transform">
+            <Link href="/" className="flex items-center gap-4 group">
+              <div className="relative w-10 h-10 bg-black rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform overflow-hidden shadow-xl shadow-black/10">
                 <Image 
                   src="/synq_logo_transparent.png" 
                   alt="Synq Logo" 
                   fill 
-                  className="object-contain"
+                  className="object-contain p-2"
                 />
               </div>
-              <span className="text-xl font-extrabold tracking-tighter">Synq</span>
+              <span className="text-2xl font-black tracking-tighter text-black">Synq</span>
             </Link>
-            <p className="text-sm text-foreground/40 max-w-xs leading-relaxed">
-              The productivity tool built for deep work and high-performance focus. Master your day in absolute flow.
+            <p className="text-base text-foreground/60 max-w-sm leading-relaxed font-medium">
+              The ultimate flow-state workspace for modern knowledge workers.
             </p>
             <div className="flex gap-4">
-               <Link href="#" className="p-2 bg-foreground/[0.03] rounded-lg hover:text-primary transition-colors"><Twitter size={18} /></Link>
-               <Link href="#" className="p-2 bg-foreground/[0.03] rounded-lg hover:text-primary transition-colors"><Github size={18} /></Link>
+               <Link href="#" className="w-10 h-10 border border-foreground/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-sm">
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-black">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+               </Link>
+               <Link href="#" className="w-10 h-10 border border-foreground/5 rounded-full flex items-center justify-center hover:bg-foreground/5 transition-all shadow-sm text-black">
+                  <Github size={18} strokeWidth={2.5} />
+               </Link>
             </div>
           </div>
 
