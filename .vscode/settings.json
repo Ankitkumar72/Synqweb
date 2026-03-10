@@ -1,7 +1,16 @@
 {
   "css.customData": [".vscode/tailwind.json"],
   "css.lint.unknownAtRules": "ignore",
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "tailwindcss"
+  },
   "files.associations": {
     "*.css": "tailwindcss"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[tailwindcss]": {
+    "css.lint.unknownAtRules": "ignore"
   }
 }

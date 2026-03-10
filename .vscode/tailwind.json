@@ -7,16 +7,20 @@
         "description": "Define custom theme tokens in Tailwind CSS v4."
       },
       {
-        "name": "@import \"tailwindcss\"",
-        "description": "Import Tailwind CSS v4 styles."
-      },
-      {
         "name": "@utility",
         "description": "Define custom utilities in Tailwind CSS v4."
       },
       {
         "name": "@variant",
         "description": "Define custom variants in Tailwind CSS v4."
+      },
+      {
+        "name": "@tailwind",
+        "description": "Tailwind CSS directive (v3 compatibility/v4 fallback)."
+      },
+      {
+        "name": "@config",
+        "description": "Tailwind CSS config directive."
       }
     ]
   }
