@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,11 +25,17 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
-             <div className="w-3.5 h-3.5 bg-white rounded-full"></div>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-8 h-8 group-hover:scale-110 transition-transform">
+             <Image 
+                src="/synq_logo_transparent.png" 
+                alt="Synq Logo" 
+                fill 
+                className="object-contain"
+                priority
+             />
           </div>
-          <span className="text-xl font-extrabold tracking-tight text-foreground">Synq</span>
+          <span className="text-xl font-extrabold tracking-tighter text-foreground">Synq</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-10">

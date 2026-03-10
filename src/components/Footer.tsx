@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Github, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   const footerLinks = {
@@ -14,11 +17,16 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
           <div className="col-span-2 lg:col-span-2 space-y-8">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-7 h-7 group-hover:scale-110 transition-transform">
+                <Image 
+                  src="/synq_logo_transparent.png" 
+                  alt="Synq Logo" 
+                  fill 
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold tracking-tight">Synq</span>
+              <span className="text-xl font-extrabold tracking-tighter">Synq</span>
             </Link>
             <p className="text-sm text-foreground/40 max-w-xs leading-relaxed">
               The productivity tool built for deep work and high-performance focus. Master your day in absolute flow.
