@@ -80,7 +80,7 @@ const HeroSection = () => {
                   </div>
 
                   {/* Current Time Indicator */}
-                  <div className="absolute -bottom-4 -left-10 right-0 flex items-center gap-2">
+                  <div className="absolute top-[50%] -left-10 right-0 flex items-center gap-2 -translate-y-1/2">
                     <div className="w-2 h-2 rounded-full bg-red-500 shadow-sm"></div>
                     <div className="flex-1 h-[1px] bg-red-500/30 border-t border-dashed border-red-500"></div>
                   </div>
