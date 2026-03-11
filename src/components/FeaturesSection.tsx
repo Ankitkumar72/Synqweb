@@ -81,29 +81,43 @@ const AnimatedTimer = () => {
     <div className="relative aspect-square md:aspect-video flex items-center justify-center bg-black rounded-[2.5rem] overflow-hidden group shadow-[0_40px_80px_-20px_rgba(0,0,0,0.3)] ring-1 ring-white/5">
       <div className="absolute inset-0 bg-gradient-to-t from-accent/10 to-transparent opacity-50"></div>
       <div className="relative z-10 text-center scale-75 md:scale-100">
-        <div className="w-56 h-56 rounded-full border-[10px] border-white/5 flex items-center justify-center relative shadow-[0_0_60px_-15px_rgba(99,199,169,0.4)]">
-          <div className="flex items-center gap-1">
-            <span className="text-6xl font-black text-white tracking-tighter tabular-nums">
+        <div className="w-56 h-56 rounded-full bg-[#050505] flex items-center justify-center relative shadow-2xl ring-1 ring-white/10 overflow-hidden">
+          {/* Inner Subtle Glow */}
+          <div className="absolute inset-0 rounded-full bg-accent/5 blur-2xl"></div>
+
+          <div className="flex items-center gap-1 z-20">
+            <span className="text-6xl font-black text-white tracking-tighter tabular-nums drop-shadow-lg">
               {String(minutes).padStart(2, "0")}
             </span>
-            <span className="text-6xl font-black text-white/30 tracking-tighter">:</span>
-            <span className="text-6xl font-black text-white tracking-tighter tabular-nums">
+            <span className="text-6xl font-black text-white/30 tracking-tighter drop-shadow-md">:</span>
+            <span className="text-6xl font-black text-white tracking-tighter tabular-nums drop-shadow-lg">
               {String(seconds).padStart(2, "0")}
             </span>
           </div>
-          <svg className="absolute inset-0 w-full h-full -rotate-90 scale-[1.05]">
+          <svg className="absolute inset-0 w-full h-full -rotate-90">
+            {/* Background Track (Inside) */}
+            <circle
+              cx="112"
+              cy="112"
+              r="100"
+              stroke="rgba(255,255,255,0.03)"
+              strokeWidth="16"
+              fill="transparent"
+            />
+            {/* Animated Progress (Inside) */}
             <motion.circle
               cx="112"
               cy="112"
-              r="101"
+              r="100"
               stroke="currentColor"
-              strokeWidth="6"
+              strokeWidth="16"
               fill="transparent"
               className="text-accent stroke-accent"
-              strokeDasharray="635"
-              initial={{ strokeDashoffset: 635 }}
-              animate={{ strokeDashoffset: 635 - (635 * (minutes * 60 + seconds)) / 1500 }}
+              strokeDasharray="628"
+              initial={{ strokeDashoffset: 628 }}
+              animate={{ strokeDashoffset: 628 - (628 * (minutes * 60 + seconds)) / 1500 }}
               transition={{ duration: 1, ease: "linear" }}
+              strokeLinecap="round"
             />
           </svg>
         </div>

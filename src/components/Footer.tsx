@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { Github } from "lucide-react";
-import Image from "next/image";
 
 const Footer = () => {
   const footerLinks = {

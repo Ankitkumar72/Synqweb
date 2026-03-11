@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { CheckCircle2, Zap, Clock } from "lucide-react";
+import { CheckCircle2, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
