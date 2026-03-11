@@ -7,8 +7,8 @@ import { Github } from "lucide-react";
 const Footer = () => {
   const footerLinks = {
     Product: ["Features", "Integrations", "Pricing"],
-    Resources: ["Blog", "Guides", "Community"],
-    Legal: ["Privacy", "Terms", "Security"]
+    Resources: ["Blog", "Guides", "Support"],
+    Legal: ["Privacy", "Terms", "Refund"]
   };
 
   return (
@@ -38,11 +38,22 @@ const Footer = () => {
             <div key={title} className="space-y-6">
               <h4 className="text-xs font-black uppercase tracking-widest text-foreground/30">{title}</h4>
               <ul className="space-y-4">
-                {links.map((link) => (
-                  <li key={link}>
-                    <Link href="#" className="text-sm font-medium text-foreground/60 hover:text-primary transition-colors">{link}</Link>
-                  </li>
-                ))}
+                {links.map((link) => {
+                  const href = link === "Support" 
+                    ? "/support" 
+                    : link === "Privacy" 
+                    ? "/privacy" 
+                    : link === "Terms" 
+                    ? "/terms" 
+                    : link === "Refund" 
+                    ? "/refund" 
+                    : "#";
+                  return (
+                    <li key={link}>
+                      <Link href={href} className="text-sm font-medium text-foreground/60 hover:text-primary transition-colors">{link}</Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
