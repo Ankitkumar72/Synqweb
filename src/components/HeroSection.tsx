@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Calendar, Plus, Flag, Search, Star, Folder, Droplets, TreePine, Waves, ChevronRight, MessageSquareText } from "lucide-react";
+import { CheckCircle2, Zap, Calendar, Plus, Flag, Search, Star, Folder, Droplets, TreePine, Waves, ChevronRight, MessageSquareText, Brain, Target, Flame, CloudRain } from "lucide-react";
 
 const PremiumProductPreview = ({ currentStep }: { currentStep: number }) => {
   const ease = [0.16, 1, 0.3, 1] as any;
@@ -388,7 +388,166 @@ const HeroSection = () => {
         </motion.div>
 
         {/* Visual Mockup Area */}
-        <div className="relative max-w-4xl mx-auto flex justify-center items-center">
+        <div className="relative max-w-5xl mx-auto flex justify-center items-center">
+          {/* Floating UI Pop-ups - Compact Orbit Layout */}
+          
+          {/* 1. Focus Activated (Top-left) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -8, 0]
+            }}
+            transition={{ 
+              delay: 0.8, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            }}
+            className="hidden xl:flex absolute top-12 -left-32 bg-[#333] p-4 rounded-[1.8rem] shadow-[0_30px_60px_rgba(0,0,0,0.3)] border border-white/10 items-center gap-3.5 z-20 min-w-[220px]"
+          >
+            <div className="w-9 h-9 bg-primary/20 rounded-2xl flex items-center justify-center text-primary shadow-lg">
+              <Zap size={18} fill="currentColor" />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] text-white/50 uppercase tracking-widest mb-0.5">Focus Activated</div>
+              <div className="text-sm text-white leading-tight">Deep Work · 45m Session</div>
+            </div>
+          </motion.div>
+
+          {/* 2. Focus Streak (Left-middle) */}
+          <motion.div
+            initial={{ opacity: 0, x: -60, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -10, 0]
+            }}
+            transition={{ 
+              delay: 1.1, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+            }}
+            className="hidden xl:flex absolute top-[42%] -left-48 bg-black/80 backdrop-blur-xl p-4 rounded-[1.8rem] shadow-[0_30px_60px_rgba(0,0,0,0.3)] border border-white/10 items-center gap-3.5 z-20 min-w-[200px]"
+          >
+            <div className="w-9 h-9 bg-orange-500/20 rounded-2xl flex items-center justify-center text-orange-400">
+              <Flame size={18} fill="currentColor" />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] text-white/30 uppercase tracking-widest mb-0.5">Focus Streak</div>
+              <div className="text-[13px] text-white leading-tight">5 days of Deep Work</div>
+            </div>
+          </motion.div>
+
+          {/* 3. Rainfall Mode (Bottom-left) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -8, 0]
+            }}
+            transition={{ 
+              delay: 1.4, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }
+            }}
+            className="hidden xl:flex absolute bottom-12 -left-32 bg-black/80 backdrop-blur-xl p-4 rounded-[1.8rem] shadow-[0_30px_60px_rgba(0,0,0,0.3)] border border-white/10 items-center gap-3.5 z-20 min-w-[220px]"
+          >
+            <div className="w-9 h-9 bg-blue-400/20 rounded-2xl flex items-center justify-center text-blue-300">
+              <CloudRain size={18} />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] text-white/30 uppercase tracking-widest mb-0.5">Rainfall Mode</div>
+              <div className="text-[13px] text-white leading-tight">Ambient focus sound enabled</div>
+            </div>
+          </motion.div>
+
+          {/* 4. Smart Suggestion (Top-right) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -10, 0]
+            }}
+            transition={{ 
+              delay: 0.95, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }
+            }}
+            className="hidden xl:flex absolute top-8 -right-32 bg-white/70 backdrop-blur-xl p-4 rounded-[1.8rem] shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/40 items-center gap-3.5 z-20 min-w-[220px]"
+          >
+            <div className="w-9 h-9 bg-primary/10 rounded-2xl flex items-center justify-center text-primary">
+              <Brain size={18} />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] font-black text-black/40 uppercase tracking-widest mb-0.5">Smart Suggestion</div>
+              <div className="text-[13px] text-black leading-tight">Move "Design Review" <br/> to 3:30 PM?</div>
+            </div>
+          </motion.div>
+
+          {/* 5. Weekly Focus (Middle-right) */}
+          <motion.div
+            initial={{ opacity: 0, x: 60, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -12, 0]
+            }}
+            transition={{ 
+              delay: 1.25, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.7 }
+            }}
+            className="hidden xl:flex absolute top-1/2 -right-48 -translate-y-1/2 bg-white/70 backdrop-blur-xl p-4 rounded-[1.8rem] shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/40 items-center gap-3.5 z-20 min-w-[240px]"
+          >
+            <div className="w-9 h-9 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+              <Target size={18} />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] font-black text-black/40 uppercase tracking-widest mb-0.5">Weekly Focus</div>
+              <div className="text-[13px] text-black leading-tight">Creating the Payment Gateway</div>
+              <div className="text-[9px] font-bold text-black/30 mt-0.5">2 tasks remaining</div>
+            </div>
+          </motion.div>
+
+          {/* 6. Task Completed (Bottom-right) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.9 }}
+            animate={{ 
+              opacity: 1, 
+              x: 0, 
+              scale: 1,
+              y: [0, -8, 0]
+            }}
+            transition={{ 
+              delay: 1.55, 
+              duration: 1, 
+              ease: [0.16, 1, 0.3, 1],
+              y: { duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }
+            }}
+            className="hidden xl:flex absolute bottom-8 -right-32 bg-white/70 backdrop-blur-xl p-4 rounded-[1.8rem] shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/40 items-center gap-3.5 z-20 min-w-[240px]"
+          >
+            <div className="w-9 h-9 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
+              <CheckCircle2 size={18} strokeWidth={3} />
+            </div>
+            <div className="text-left font-black">
+              <div className="text-[10px] text-black/20 uppercase tracking-widest mb-0.5">Task Completed</div>
+              <div className="text-sm text-black/80 font-black leading-tight">Q4 Product Roadmap Sync</div>
+            </div>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 60 }}
             animate={{ 
@@ -414,37 +573,6 @@ const HeroSection = () => {
                {/* Dynamic Island / Notch */}
                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30"></div>
             </div>
-
-            {/* Floating UI cards */}
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="hidden xl:flex absolute top-10 -left-64 md:-left-96 bg-[#333] p-5 rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.4)] items-center gap-4 z-20 min-w-[260px] border border-white/10"
-            >
-              <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center text-primary shadow-lg">
-                <Zap size={22} fill="currentColor" />
-              </div>
-              <div className="text-left font-black">
-                <div className="text-[10px] text-white/50 uppercase tracking-widest mb-0.5">Focus Activated</div>
-                <div className="text-sm text-white">Deep Work · 45m Session</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="hidden xl:flex absolute bottom-10 -right-64 md:-right-96 bg-white p-5 rounded-[2rem] shadow-[0_40px_80px_-16px_rgba(0,0,0,0.1)] items-center gap-4 z-20 min-w-[260px] border border-black/[0.03]"
-            >
-              <div className="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center text-accent">
-                <CheckCircle2 size={24} strokeWidth={3} />
-              </div>
-              <div className="text-left font-black">
-                <div className="text-[10px] text-black/20 uppercase tracking-widest mb-0.5">Task Completed</div>
-                <div className="text-sm text-black/80">Q4 Product Roadmap Sync</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>
