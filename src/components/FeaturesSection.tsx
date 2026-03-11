@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Timer, TrendingUp } from "lucide-react";
+import { Calendar, Timer, TrendingUp, Plus, Flag, MessageSquareText } from "lucide-react";
 
 interface FeatureCardProps {
   title: string;
@@ -59,6 +59,94 @@ const FeatureCard = ({
     </motion.div>
   </div>
 );
+const WeeklyRoadmapPreview = () => {
+  return (
+    <div className="relative p-8 md:p-12 glass rounded-[2.5rem] premium-shadow border border-foreground/[0.03] bg-gradient-to-br from-white to-primary/5 overflow-hidden min-h-[480px] flex items-center justify-center">
+      {/* Decorative background circles */}
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -z-10"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-[60px] -z-10"></div>
+
+      <div className="relative w-full max-w-sm space-y-6">
+        {/* Weekly Focus Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white p-6 rounded-[2rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.05)] border border-black/[0.03] space-y-4"
+        >
+          <div className="flex items-center gap-3">
+             <div className="w-10 h-10 bg-[#EEEFFF] rounded-xl flex items-center justify-center text-primary">
+               <Flag size={18} fill="currentColor" />
+             </div>
+             <span className="text-sm font-bold text-black/40 uppercase tracking-widest">Weekly Focus</span>
+          </div>
+          <div className="space-y-1">
+             <h4 className="text-xl font-black text-black">Creating the app payment gateway</h4>
+             <div className="flex items-center justify-between">
+                <span className="px-3 py-1 bg-foreground/5 text-[10px] font-black text-black/40 rounded-full uppercase tracking-tighter">High Priority</span>
+                <span className="text-[10px] font-bold text-black/20">0/0 completed</span>
+             </div>
+          </div>
+        </motion.div>
+
+        {/* Schedule Task Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="bg-white p-5 rounded-[2rem] shadow-[0_20px_40px_-12px_rgba(0,0,0,0.05)] border border-primary/10 flex items-center justify-between group hover:border-primary/30 transition-colors"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full border-2 border-primary/10 flex items-center justify-center text-xs font-black text-black">
+               <div className="text-center">
+                 <div className="text-[8px] uppercase opacity-40">Tue</div>
+                 <div className="leading-none mt-0.5">10</div>
+               </div>
+            </div>
+            <div>
+              <h5 className="text-sm font-bold text-black">Free Day</h5>
+              <p className="text-[10px] text-black/40 font-medium italic">No tasks scheduled</p>
+            </div>
+          </div>
+          <button className="px-5 py-1.5 bg-[#EEEFFF] text-primary text-[10px] font-black rounded-full uppercase transition-all group-hover:bg-primary group-hover:text-white">
+            Plan
+          </button>
+        </motion.div>
+
+        {/* Floating Note Component */}
+        <motion.div
+          initial={{ opacity: 0, x: 20, rotate: 2 }}
+          whileInView={{ opacity: 1, x: 0, rotate: -2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="absolute -bottom-4 -right-8 md:-right-12 bg-white/80 backdrop-blur-xl p-5 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-black/[0.03] max-w-[240px] hidden md:block"
+        >
+          <div className="flex items-center gap-2 mb-3">
+             <MessageSquareText size={16} className="text-accent" />
+             <span className="text-[10px] font-black uppercase tracking-widest text-black/30">Pro Tip</span>
+          </div>
+          <p className="text-xs font-semibold text-black leading-relaxed">
+            <span className="text-accent">Deep Work:</span> Use notes to capture ideas that don&apos;t need a &quot;Done&quot; button.
+          </p>
+        </motion.div>
+
+        {/* Calendar Navigation Pill */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="absolute top-12 left-1/2 -translate-x-1/2 px-6 py-2 bg-black text-white text-[10px] font-black rounded-full uppercase tracking-widest shadow-xl flex items-center gap-3"
+        >
+          <span>Mar 9 - Mar 15</span>
+          <Plus size={12} className="text-primary" />
+        </motion.div>
+      </div>
+    </div>
+  );
+};
 
 const AnimatedTimer = () => {
   const [minutes, setMinutes] = React.useState(25);
@@ -148,22 +236,7 @@ const FeaturesSection = () => {
           description="Visual timeboxing designed for deep work. Drag tasks directly onto your calendar to clearly see where your energy goes. Stop guessing, start performing."
           highlights={["2-way calendar sync", "Smart buffer scheduling", "Multi-time zone support"]}
           icon={Calendar}
-          visual={
-            <div className="relative p-10 glass rounded-[2.5rem] premium-shadow border border-foreground/[0.03] bg-gradient-to-br from-white to-primary/5">
-              <div className="flex items-center justify-between mb-10">
-                <div className="text-[10px] font-black opacity-20 tracking-[0.2em] uppercase">Weekly Roadmap</div>
-                <div className="flex gap-2">
-                   <div className="w-4 h-4 rounded-full bg-foreground/5"></div>
-                   <div className="w-12 h-4 rounded-full bg-foreground/5"></div>
-                </div>
-              </div>
-              <div className="flex gap-4 items-end">
-                <div className="flex-1 h-48 bg-primary/10 rounded-2xl animate-pulse"></div>
-                <div className="flex-1 h-72 bg-primary/40 rounded-2xl shadow-lg shadow-primary/20"></div>
-                <div className="flex-1 h-56 bg-primary/20 rounded-2xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-              </div>
-            </div>
-          }
+          visual={<WeeklyRoadmapPreview />}
         />
 
         {/* Feature 2 */}

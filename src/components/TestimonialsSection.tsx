@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
               </div>
               <p className="text-lg font-medium text-foreground/80 mb-8 leading-relaxed">
-                "{t.quote}"
+                &quot;{t.quote}&quot;
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center font-bold text-primary group-hover:scale-110 transition-transform">
