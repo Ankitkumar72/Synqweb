@@ -36,7 +36,7 @@ const Footer = () => {
 
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title} className="space-y-6">
-              <h4 className="text-xs font-black uppercase tracking-widest text-foreground/30">{title}</h4>
+              <h4 className="text-xs font-black uppercase tracking-widest text-black">{title}</h4>
               <ul className="space-y-4">
                 {links.map((link) => {
                   const href = link === "Support" 
