@@ -22,44 +22,78 @@ const testimonials = [
     role: "Founder @ Stealth Startup",
     quote: "Pure flow. That's the only way to describe using Synq. It removes all the friction from my schedule.",
     avatar: "MT"
+  },
+  {
+    name: "Elena Rodriguez",
+    role: "Senior Dev @ Vercel",
+    quote: "The best focus tool I've used in years. It minimalist, fast, and actually helps me enter a flow state in minutes.",
+    avatar: "ER"
+  },
+  {
+    name: "James Wilson",
+    role: "Product Manager @ Notion",
+    quote: "Synq bridges the gap between planning and execution. It's the only tool that lives in my workflow without being a distraction.",
+    avatar: "JW"
+  },
+  {
+    name: "Mia Sato",
+    role: "Designer @ Figma",
+    quote: "Beautiful interface and even better functionality. It's rare to find a tool that looks this good and works even better.",
+    avatar: "MS"
   }
 ];
 
 const TestimonialsSection = () => {
+  // Duplicate testimonials for seamless looping
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
     <section id="company" className="py-32 bg-white">
-      <div className="container">
+      <div className="container px-4">
         <h2 className="text-4xl md:text-6xl font-black tracking-tight text-center mb-24 max-w-3xl mx-auto leading-tight">
           Built for modern creators.
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, idx) => (
+        <div className="relative overflow-hidden rounded-[2rem]">
+          <div className="flex gap-8">
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="p-8 glass rounded-3xl hover:border-primary/20 transition-all group flex flex-col h-full"
+              initial={{ x: 0 }}
+              animate={{ x: "-50%" }}
+              transition={{
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="flex gap-8 whitespace-nowrap"
             >
-              <div className="flex gap-1 mb-6 text-accent">
-                {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
-              </div>
-              <p className="text-lg font-medium text-foreground/80 mb-8 leading-relaxed flex-grow">
-                &quot;{t.quote}&quot;
-              </p>
-              <div className="flex items-center gap-4 mt-auto pt-4">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center font-bold text-primary group-hover:scale-110 transition-transform flex-shrink-0">
-                  {t.avatar}
+              {duplicatedTestimonials.map((t, idx) => (
+                <div
+                  key={idx}
+                  className="w-[350px] md:w-[450px] p-8 glass rounded-3xl hover:border-primary/20 transition-all group flex flex-col shrink-0"
+                >
+                  <div className="flex gap-1 mb-6 text-accent">
+                    {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+                  </div>
+                  <p className="text-lg font-medium text-foreground/80 mb-8 leading-relaxed whitespace-normal flex-grow">
+                    &quot;{t.quote}&quot;
+                  </p>
+                  <div className="flex items-center gap-4 mt-auto pt-4 border-t border-foreground/5">
+                    <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center font-bold text-primary group-hover:scale-110 transition-transform flex-shrink-0">
+                      {t.avatar}
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-sm font-bold text-foreground leading-none mb-1">{t.name}</div>
+                      <div className="text-xs text-foreground/40 leading-none">{t.role}</div>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-col">
-                  <div className="text-sm font-bold text-foreground leading-none mb-1">{t.name}</div>
-                  <div className="text-xs text-foreground/40 leading-none">{t.role}</div>
-                </div>
-              </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+          
+          {/* Gradient Fade Overlays - Now relative to the container */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent pointer-events-none z-10" />
         </div>
       </div>
     </section>
