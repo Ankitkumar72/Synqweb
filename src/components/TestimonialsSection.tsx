@@ -41,21 +41,21 @@ const TestimonialsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="p-8 glass rounded-3xl hover:border-primary/20 transition-all group"
+              className="p-8 glass rounded-3xl hover:border-primary/20 transition-all group flex flex-col h-full"
             >
               <div className="flex gap-1 mb-6 text-accent">
                 {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
               </div>
-              <p className="text-lg font-medium text-foreground/80 mb-8 leading-relaxed">
+              <p className="text-lg font-medium text-foreground/80 mb-8 leading-relaxed flex-grow">
                 &quot;{t.quote}&quot;
               </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center font-bold text-primary group-hover:scale-110 transition-transform">
+              <div className="flex items-center gap-4 mt-auto pt-4">
+                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center font-bold text-primary group-hover:scale-110 transition-transform flex-shrink-0">
                   {t.avatar}
                 </div>
-                <div>
-                  <div className="text-sm font-bold text-foreground">{t.name}</div>
-                  <div className="text-xs text-foreground/40">{t.role}</div>
+                <div className="flex flex-col">
+                  <div className="text-sm font-bold text-foreground leading-none mb-1">{t.name}</div>
+                  <div className="text-xs text-foreground/40 leading-none">{t.role}</div>
                 </div>
               </div>
             </motion.div>
