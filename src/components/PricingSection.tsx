@@ -15,7 +15,7 @@ const pricingPlans = [
   },
   {
     name: "Pro Flow",
-    price: "$12",
+    price: "$24.99",
     description: "The ultimate toolkit for deep work and high performance.",
     features: ["Everything in Personal", "AI auto-scheduling", "Advanced analytics", "Priority support"],
     button: "Go Pro Now",
@@ -27,11 +27,14 @@ const PricingSection = () => {
   return (
     <section id="pricing" className="py-32 bg-white relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-foreground/5 to-transparent"></div>
-      
+
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-24">
           <h2 className="text-5xl font-black tracking-tight mb-8">Focus-based pricing.</h2>
-          <p className="text-xl text-foreground/40 font-medium leading-relaxed">Choose the plan that fits your ambition. No hidden fees.</p>
+          <p className="text-xl text-foreground/40 font-medium leading-relaxed">
+            Choose the plan that fits your ambition. No hidden fees. <br />
+            <span className="text-sm text-foreground/30">Includes a 7-day money-back guarantee on all Pro plans.</span>
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -49,7 +52,7 @@ const PricingSection = () => {
                   Most Popular
                 </div>
               )}
-              
+
               <div className="mb-8">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
@@ -68,11 +71,10 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <button className={`w-full py-4 rounded-2xl font-bold transition-all ${
-                plan.popular 
-                ? 'bg-primary text-white hover:bg-primary/90 hover:scale-[1.02] shadow-xl shadow-primary/20' 
+              <button className={`w-full py-4 rounded-2xl font-bold transition-all ${plan.popular
+                ? 'bg-primary text-white hover:bg-primary/90 hover:scale-[1.02] shadow-xl shadow-primary/20'
                 : 'bg-foreground text-background hover:bg-foreground/90 hover:scale-[1.02]'
-              }`}>
+                }`}>
                 {plan.button}
               </button>
             </motion.div>

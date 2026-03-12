@@ -61,6 +61,7 @@ export default function RefundPage() {
                 <li>Subscription renewals that were not canceled before the renewal date</li>
                 <li>Violations of the Synq Terms of Service</li>
                 <li>Abuse of the refund policy</li>
+                <li>Free plan users are not eligible for refunds as no payment is made</li>
               </ul>
               <p>Synq reserves the right to decline refund requests that do not meet the eligibility criteria.</p>
             </section>

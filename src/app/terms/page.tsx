@@ -18,7 +18,7 @@ export default function TermsPage() {
                 Please read these Terms of Service (&quot;Terms&quot;) carefully before using the Synq application and services operated by Synq (&quot;Synq&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;).
               </p>
               <p className="mb-6">
-                Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms and our Privacy Policy. By accessing or using the Service, you agree to be bound by these Terms.
+                Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms and our Privacy Policy. By accessing or using the Service, you agree to be bound by these Terms. <span className="font-bold">You must be at least 13 years old to use the Service.</span>
               </p>
             </section>
 
@@ -97,6 +97,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold text-black mb-6 italic">8. Refunds</h2>
               <p className="mb-4">Refunds may be available for subscription purchases within a limited period. Unless otherwise stated, Synq may offer a <span className="font-bold">7-day refund window</span> for eligible purchases.</p>
+              <p className="mt-4">For full details, see our <a href="/refund" className="text-blue-600 hover:underline">Refund Policy</a>.</p>
             </section>
 
             <section>

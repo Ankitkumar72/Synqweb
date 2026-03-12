@@ -101,7 +101,7 @@ export default function SupportPage() {
             <section>
               <h2 className="text-[26px] font-bold text-black mb-6 italic">G. Service Status</h2>
               <p className="mb-4">Synq strives to provide reliable service. However, occasional maintenance or technical issues may affect availability.</p>
-              <p>If you believe the Service is experiencing an outage, please contact support.</p>
+              <p>If you believe the Service is experiencing an outage, please contact support at <a href="mailto:synq.app.labs@gmail.com" className="text-blue-600 hover:underline">synq.app.labs@gmail.com</a>.</p>
             </section>
 
             <section>

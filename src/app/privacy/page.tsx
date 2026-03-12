@@ -177,12 +177,13 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold text-black mb-6">10. Cookies and Tracking Technologies</h2>
               <p className="mb-4">Synq may use cookies or similar technologies to:</p>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Maintain authentication sessions</li>
                 <li>Store user preferences</li>
                 <li>Analyze service usage</li>
                 <li>Improve platform functionality</li>
               </ul>
+              <p className="text-gray-600 italic">The Synq web platform may use cookies. The mobile application does not use browser cookies.</p>
             </section>
 
             <section>
