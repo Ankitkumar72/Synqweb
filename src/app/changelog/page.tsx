@@ -7,6 +7,21 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.1.0",
+      date: "March 14, 2026",
+      title: "Creation Flow & UI Enhancements",
+      description: "Focused on unifying the app's creation experience and enhancing overall UI/UX through premium interactions.",
+      changes: [
+        "Transitioned the Create Event flow into a consistent bottom-sheet interface",
+        "Introduced navigation chips to seamlessly toggle between creating tasks, events, and locations",
+        "Optimized keyboard-aware layouts with dynamic padding adjustments for text-heavy interactions",
+        "Implemented smooth drag-to-close transitions and refined sheet animations",
+        "Launched a new calendar selector widget for intuitive date picking",
+        "Updated the daily timeline integration for faster access to creation flows"
+      ],
+      type: "Update"
+    },
+    {
       version: "v1.0.0",
       date: "March 13, 2026",
       title: "Initial Public Release",
