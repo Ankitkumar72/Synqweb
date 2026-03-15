@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const FinalCTA = () => {
   return (
@@ -23,9 +24,9 @@ const FinalCTA = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <button className="bg-black text-white px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/10">
+            <Link href="/waitlist" className="inline-block bg-black text-white px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/10">
               <span className="text-[10px] font-black uppercase tracking-[0.2em]">Join 20k+ users on synq</span>
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>

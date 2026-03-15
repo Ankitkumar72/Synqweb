@@ -373,18 +373,10 @@ const HeroSection = () => {
               in absolute flow.
             </span>
           </h1>
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/40 mb-12 leading-relaxed font-medium">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-foreground/40 mb-24 leading-relaxed font-medium">
             Plan your week, sync your schedule, and enter deep work sessions
             with the productivity tool built for high-performance focus.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-24">
-            <button className="w-full sm:w-auto bg-primary text-white font-black px-10 py-5 rounded-full hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-primary/30">
-              Get Started for Free
-            </button>
-            <button className="w-full sm:w-auto bg-white border border-foreground/5 text-foreground font-black px-10 py-5 rounded-full hover:bg-foreground/5 transition-all shadow-sm">
-              See how it works
-            </button>
-          </div>
         </motion.div>
 
         {/* Visual Mockup Area */}

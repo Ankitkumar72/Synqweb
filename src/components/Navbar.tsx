@@ -46,12 +46,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <button className="hidden sm:block text-sm font-bold text-foreground/60 hover:text-primary transition-colors">
-            Log in
-          </button>
-          <button className="bg-foreground text-background text-sm font-black px-6 py-3 rounded-full hover:bg-foreground/90 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-foreground/10">
-            Get Started
-          </button>
+
+          <Link href="/waitlist" className="inline-block bg-foreground text-background text-sm font-black px-6 py-3 rounded-full hover:bg-foreground/90 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-foreground/10">
+            Join Waitlist
+          </Link>
         </div>
       </div>
     </motion.nav>
