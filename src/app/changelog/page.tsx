@@ -7,6 +7,21 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.2.0",
+      date: "March 15, 2026",
+      title: "Waitlist & Pre-launch Infrastructure",
+      description: "Added a dedicated Waitlist page to streamline early access sign-ups and integrated a secure backend for capturing emails and delivering confirmations.",
+      changes: [
+        "Created a dedicated /waitlist page with a distraction-free, high-converting design",
+        "Replaced generic \"Get Started\" and \"Log in\" buttons with focused \"Join Waitlist\" calls to action",
+        "Integrated Supabase as the database for securely capturing and storing waitlist emails",
+        "Implemented robust email deduplication to gracefully prevent double sign-ups",
+        "Set up Nodemailer with Gmail SMTP to automatically send premium confirmation emails",
+        "Added smooth animated states to the waitlist form for loading, success, and error scenarios"
+      ],
+      type: "New Feature"
+    },
+    {
       version: "v1.1.0",
       date: "March 14, 2026",
       title: "Creation Flow & UI Enhancements",
