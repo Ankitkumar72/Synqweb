@@ -63,7 +63,7 @@ export async function POST(req: Request) {
         await transporter.sendMail({
           from: `"Synq" <${process.env.GMAIL_USER}>`,
           to: email,
-          subject: "You're on the waitlist! 🎉",
+          subject: "You're on the waitlist!",
           html: `
             <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; text-align: center;">
               <h1 style="color: #111; font-weight: 900; letter-spacing: -0.05em; font-size: 32px; margin-bottom: 24px;">Welcome to the Synq Waitlist!</h1>
