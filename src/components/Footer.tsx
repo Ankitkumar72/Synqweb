@@ -6,8 +6,8 @@ import { Github } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = {
-    Product: ["Features", "Integrations", "Pricing"],
-    Resources: ["Changelog", "Blog", "Guides", "Support"],
+    Product: ["Features", "Pricing"],
+    Resources: ["Changelog", "Support"],
     Legal: ["Privacy", "Terms", "Refund"]
   };
 
