@@ -7,6 +7,22 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.3.0",
+      date: "March 16, 2026",
+      title: "Calendar & Timeline Refinements",
+      description: "Polished the core scheduling experience with a premium redesign and smarter UX across the app.",
+      changes: [
+        "Redesigned the New Event popup with a sleek dark theme and modern grouped layout",
+        "Refined date picker with circular day shapes and improved current day indicator",
+        "Replaced plain action buttons with solid pill-shaped primary buttons",
+        "Added a current time indicator to the Daily Timeline view",
+        "Upgraded the event creation flow with a more robust schedule selection component",
+        "Fixed padding issues on the Profile page for a balanced layout",
+        "Removed the redundant \"Clear Offline Data\" button from Profile"
+      ],
+      type: "Improvement"
+    },
+    {
       version: "v1.2.0",
       date: "March 15, 2026",
       title: "Waitlist & Pre-launch Infrastructure",
