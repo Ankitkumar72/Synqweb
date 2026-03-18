@@ -7,6 +7,29 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.4.0",
+      date: "March 18, 2026",
+      title: "Advanced Timeline & Scheduling Control",
+      description: "A major update to our daily timeline experience, introducing intelligent event stacking, precision drag & drop snapping, and specialized visual treatments for tasks vs. events.",
+      changes: [
+        { text: "Daily Timeline", type: "section" },
+        { text: "Visually distinct tasks (chips) and events (full blocks) with dedicated completion states", type: "improvement" },
+        { text: "Intelligent overlapping event layout with dynamic column-based stacking", type: "improvement" },
+        { text: "Precision drag & drop snapping to timeline grid with elegant visual feedback", type: "improvement" },
+        { text: "Refined hourly spacing and timing indicators for a perfectly balanced view", type: "improvement" },
+        { text: "Quick-create via empty slot tapping with intelligent bottom sheet fast-actions", type: "improvement" },
+        
+        { text: "View Event Page", type: "section" },
+        { text: "Optimized read-only event detail view for faster quick-glancing", type: "improvement" },
+        { text: "Enhanced typography and layout spacing for long event descriptions", type: "improvement" },
+
+        { text: "Bug Fixes", type: "section" },
+        { text: "Resolved deep event scheduling logical inconsistencies to ensure rock-solid timing", type: "fix" },
+        { text: "Fixed timezone offset calculation errors affecting overlapping events", type: "fix" }
+      ],
+      type: "Major Update"
+    },
+    {
       version: "v1.3.0",
       date: "March 16, 2026",
       title: "Calendar & Timeline Refinements",
@@ -149,12 +172,28 @@ export default function ChangelogPage() {
 
                   <div className="glass p-8 md:p-10 rounded-[32px] premium-shadow">
                     <ul className="space-y-6">
-                      {update.changes.map((change, i) => (
-                        <li key={i} className="flex gap-5 text-gray-900 group">
-                          <div className="mt-2 w-2 h-2 rounded-full bg-[#537DF9] flex-shrink-0 group-hover:scale-150 transition-transform duration-300" />
-                          <span className="text-base md:text-lg font-semibold leading-snug">{change}</span>
-                        </li>
-                      ))}
+                      {update.changes.map((change: any, i: number) => {
+                        const isString = typeof change === "string";
+                        const text = isString ? change : change.text;
+                        const type = isString ? "improvement" : change.type || "improvement";
+                        
+                        if (type === "section") {
+                          return (
+                            <li key={i} className={`pt-2 pb-1 ${i === 0 ? "" : "mt-2"}`}>
+                              <h3 className="text-xl font-black text-black tracking-tight">{text}</h3>
+                            </li>
+                          );
+                        }
+
+                        const dotColor = type === "fix" ? "bg-[#FF5A5A]" : "bg-[#537DF9]";
+
+                        return (
+                          <li key={i} className="flex gap-5 text-gray-900 group">
+                            <div className={`mt-2 w-2 h-2 rounded-full ${dotColor} flex-shrink-0 group-hover:scale-150 transition-transform duration-300`} />
+                            <span className="text-base md:text-lg font-semibold leading-snug">{text}</span>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>
