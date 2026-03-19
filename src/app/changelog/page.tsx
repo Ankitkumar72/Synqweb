@@ -115,8 +115,8 @@ export default function ChangelogPage() {
       </div>
 
       <div className="flex-grow py-32 md:py-48 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <header className="mb-24 md:mb-32">
+        <div className="container mx-auto">
+          <header className="mb-24 md:mb-32 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -130,9 +130,25 @@ export default function ChangelogPage() {
                 Stay updated with the latest improvements, new features, and fixes we&apos;ve added to Synq.
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex-shrink-0"
+            >
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-[#FAFAFA] hover:bg-gray-100 text-base font-semibold text-black rounded-full border border-gray-200/80 transition-colors"
+               >
+                Follow us on X
+              </a>
+            </motion.div>
           </header>
 
-          <div className="space-y-32 relative">
+          <div className="max-w-5xl mx-auto space-y-32 relative">
             {updates.map((update, index) => (
               <motion.section 
                 key={update.version}
