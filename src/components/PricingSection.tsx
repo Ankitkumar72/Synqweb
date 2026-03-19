@@ -75,7 +75,7 @@ export default function PricingSection() {
               transition={{ delay: idx * 0.1 }}
               className={`relative p-10 rounded-[2.5rem] border ${plan.popular ? 'border-primary ring-1 ring-primary/20 shadow-2xl shadow-primary/10' : 'border-foreground/5 bg-foreground/[0.02]'} flex flex-col`}
             >
-              {plan.popular && (
+              {plan.popular && isYearly && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg border border-primary/20">
                   Most Popular
                 </div>
