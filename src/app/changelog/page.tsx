@@ -7,6 +7,27 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.5.0",
+      date: "March 21, 2026",
+      title: "Unified Timeline Engine & Layout Optimizations",
+      description: "A complete overhaul of the timeline's mathematical collision engine to automatically handle dense scheduling, alongside dynamic scrolling and responsive text wrapping.",
+      changes: [
+        { text: "Unified Layout Engine", type: "section" },
+        { text: "Integrated tasks and events into a single mathematical collision engine to eliminate messy overlaps", type: "improvement" },
+        { text: "Dynamically multiplied Task column width weight to 3.0x to command more screen space", type: "improvement" },
+        
+        { text: "Grid & Scroll Enhancements", type: "section" },
+        { text: "Introduced a Bounded Inner Scroll allowing infinite tasks to sit in an isolated micro-scroll window confined to their hour block", type: "improvement" },
+        { text: "Removed hidden minimum width constraints to restore a proportional edge-to-edge gap grid for heavily packed events", type: "fix" },
+        
+        { text: "Responsive Density Controls", type: "section" },
+        { text: "Enforced dynamic width constraints on task chips based on screen real estate, preventing single long tasks from hoarding entire rows", type: "fix" },
+        { text: "Optimized narrow events with reduced 2px padding and explicit maximum line constraints", type: "improvement" },
+        { text: "Added a responsive LayoutBuilder that intelligently drops end times when columns shrink to avoid ugly text truncation", type: "improvement" }
+      ],
+      type: "Major Update"
+    },
+    {
       version: "v1.4.0",
       date: "March 18, 2026",
       title: "Advanced Timeline & Scheduling Control",
