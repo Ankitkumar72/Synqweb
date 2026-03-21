@@ -25,7 +25,7 @@ const FinalCTA = () => {
             transition={{ delay: 0.1 }}
           >
             <Link href="/waitlist" className="inline-block bg-black text-white px-10 py-5 rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-black/10">
-              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Join 20k+ users on synq</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Be among the first 200 &middot; Join the waitlist &rarr;</span>
             </Link>
           </motion.div>
         </div>

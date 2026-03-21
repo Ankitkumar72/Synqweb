@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-center items-center pt-8 border-t border-foreground/5 gap-4">
           <div className="text-[10px] font-bold uppercase tracking-widest text-foreground/30">
-            © 2026 Synq Productivity Inc.
+            © 2026 Synq
           </div>
         </div>
       </div>
