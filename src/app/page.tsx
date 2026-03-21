@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SocialProof from "@/components/SocialProof";
+// Removed SocialProof import
 import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
@@ -12,7 +12,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <SocialProof />
+      {/* Removed SocialProof component */}
       <FeaturesSection />
       <TestimonialsSection />
       <PricingSection />

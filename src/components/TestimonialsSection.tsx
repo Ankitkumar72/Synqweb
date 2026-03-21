@@ -6,40 +6,40 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alex Rivers",
-    role: "Product Designer @ Linear",
+    name: "Rahul Sharma",
+    role: "Early/Beta user of Synq",
     quote: "Synq changed how I plan my workday. It's not about doing more — it's about doing what matters. The focus mode is a game changer.",
-    avatar: "AR"
+    avatar: "RS"
   },
   {
-    name: "Sarah Chen",
-    role: "Software Engineer @ Stripe",
+    name: "Priya Patel",
+    role: "Early/Beta user of Synq",
     quote: "The visual timeboxing is so intuitive. I've tried every productivity app out there, and Synq is the first one that actually sticks.",
-    avatar: "SC"
+    avatar: "PP"
   },
   {
-    name: "Marcus Thorne",
-    role: "Founder @ Stealth Startup",
+    name: "Aditya Desai",
+    role: "Early/Beta user of Synq",
     quote: "Pure flow. That's the only way to describe using Synq. It removes all the friction from my schedule.",
-    avatar: "MT"
+    avatar: "AD"
   },
   {
-    name: "Elena Rodriguez",
-    role: "Senior Dev @ Vercel",
+    name: "Neha Gupta",
+    role: "Early/Beta user of Synq",
     quote: "The best focus tool I've used in years. It minimalist, fast, and actually helps me enter a flow state in minutes.",
-    avatar: "ER"
+    avatar: "NG"
   },
   {
-    name: "James Wilson",
-    role: "Product Manager @ Notion",
+    name: "Karan Singh",
+    role: "Early/Beta user of Synq",
     quote: "Synq bridges the gap between planning and execution. It's the only tool that lives in my workflow without being a distraction.",
-    avatar: "JW"
+    avatar: "KS"
   },
   {
-    name: "Mia Sato",
-    role: "Designer @ Figma",
+    name: "Anjali Verma",
+    role: "Early/Beta user of Synq",
     quote: "Beautiful interface and even better functionality. It's rare to find a tool that looks this good and works even better.",
-    avatar: "MS"
+    avatar: "AV"
   }
 ];
 
