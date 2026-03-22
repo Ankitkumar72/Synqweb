@@ -7,6 +7,36 @@ import { motion } from "framer-motion";
 export default function ChangelogPage() {
   const updates = [
     {
+      version: "v1.6.0",
+      date: "March 22, 2026",
+      title: "Overdue Page Redesign & Priorities Update",
+      description: "A comprehensive refresh of the Overdue Tasks page with a cleaner design, improved interaction, and streamlined task priorities defaulting to 'None'.",
+      changes: [
+        { text: "Priorities", type: "section" },
+        { text: "Tasks now default to \"None\" priority (previously \"Medium\")", type: "improvement" },
+        { text: "Migrated all existing \"Medium\" priority tasks to \"None\"", type: "improvement" },
+        { text: "Hidden priority pill/ring on cards when priority is \"None\"", type: "improvement" },
+        
+        { text: "Overdue Page – Header", type: "section" },
+        { text: "Centered the \"Overdue\" title", type: "improvement" },
+        { text: "Replaced task counter badge with hamburger menu icon", type: "improvement" },
+        { text: "Applied standard AppTheme colors (removed custom red theme)", type: "improvement" },
+        { text: "Redesigned summary banner: removed border box, bold black text, replaced calendar icon with check_logo.png", type: "improvement" },
+
+        { text: "Overdue Page – Task Cards", type: "section" },
+        { text: "Reduced card height (tighter padding & margins)", type: "improvement" },
+        { text: "Removed thick blue left border", type: "improvement" },
+        { text: "Long task names/descriptions now truncate with ellipsis", type: "improvement" },
+        { text: "Full card is now tappable, navigating to the \"View Task\" page", type: "improvement" },
+
+        { text: "Overdue Page – Reschedule Button", type: "section" },
+        { text: "Wired up button to a custom dark-themed date picker calendar popup", type: "improvement" },
+        { text: "Fixed tap-through bug on transparent button background", type: "fix" },
+        { text: "Rescheduling preserves the original task's time (only the date changes)", type: "improvement" }
+      ],
+      type: "Improvement"
+    },
+    {
       version: "v1.5.0",
       date: "March 21, 2026",
       title: "Unified Timeline Engine & Layout Optimizations",
