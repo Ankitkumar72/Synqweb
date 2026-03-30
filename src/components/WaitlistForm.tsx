@@ -56,7 +56,7 @@ export const WaitlistForm: React.FC<WaitlistFormProps> = ({
         setStatus("error");
         setMessage(data.message || "Something went wrong, please try again.");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
       setMessage("Something went wrong, please try again.");
     }
@@ -174,7 +174,7 @@ const WaitlistSuccessUI = ({ message }: { message: string }) => {
 
         <div className="bg-black/5 rounded-2xl p-4 mb-5 border border-black/5">
           <p className="text-sm text-black/80 leading-relaxed font-medium">
-            "Just joined the waitlist for Synq — a focus app that actually gets deep work. Check it out →"
+            &ldquo;Just joined the waitlist for Synq &mdash; a focus app that actually gets deep work. Check it out &rarr;&rdquo;
             <br />
             <a href={shareLink} target="_blank" rel="noopener noreferrer" className="text-black font-bold mt-1 inline-block hover:underline">{shareLink}</a>
           </p>

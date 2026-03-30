@@ -2,10 +2,10 @@
 
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Zap, Calendar, Plus, Flag, Search, Star, Folder, Droplets, TreePine, Waves, ChevronRight, MessageSquareText, Brain, Target, Flame, CloudRain } from "lucide-react";
+import { CheckCircle2, Zap, Flag, Search, Folder, Droplets, TreePine, Waves, MessageSquareText, Brain, Target, Flame, CloudRain } from "lucide-react";
 
 const PremiumProductPreview = ({ currentStep }: { currentStep: number }) => {
-  const ease = [0.16, 1, 0.3, 1] as any;
+  const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
   return (
     <div className="relative h-full w-full bg-white overflow-hidden flex flex-col font-sans">
@@ -200,7 +200,7 @@ const PremiumProductPreview = ({ currentStep }: { currentStep: number }) => {
                  <div className="space-y-6">
                    <div className="relative pl-6">
                      <div className="absolute left-0 top-1 bottom-1 w-[3px] bg-primary rounded-full" />
-                     <p className="text-sm text-black/70 leading-relaxed font-semibold">"Flow is the result of single-tasking with zero external friction."</p>
+                     <p className="text-sm text-black/70 leading-relaxed font-semibold">&ldquo;Flow is the result of single-tasking with zero external friction.&rdquo;</p>
                    </div>
                    <p className="text-sm text-black/40 leading-relaxed font-medium">Minimize context switching by batching similar small tasks into focus blocks.</p>
                  </div>
@@ -483,7 +483,7 @@ const HeroSection = () => {
             </div>
             <div className="text-left font-black">
               <div className="text-[10px] font-black text-black/40 uppercase tracking-widest mb-0.5">Smart Suggestion</div>
-              <div className="text-[13px] text-black leading-tight">Move "Design Review" <br/> to 3:30 PM?</div>
+              <div className="text-[13px] text-black leading-tight">Move &ldquo;Design Review&rdquo; <br/> to 3:30 PM?</div>
             </div>
           </motion.div>
 

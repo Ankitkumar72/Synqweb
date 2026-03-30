@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = {

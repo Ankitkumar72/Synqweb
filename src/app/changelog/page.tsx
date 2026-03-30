@@ -4,8 +4,52 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 
+type ChangeType = "section" | "improvement" | "fix";
+
+type StructuredChange = {
+  text: string;
+  type?: ChangeType;
+};
+
+type ChangeEntry = string | StructuredChange;
+
+type ChangelogUpdate = {
+  version: string;
+  date: string;
+  title: string;
+  description: string;
+  changes: ChangeEntry[];
+  type: string;
+};
+
 export default function ChangelogPage() {
-  const updates = [
+  const updates: ChangelogUpdate[] = [
+    {
+      version: "v1.7.0",
+      date: "March 30, 2026",
+      title: "Adaptive Edge-to-Edge UI & System Integration",
+      description: "Full compatibility with Android 11+ edge-to-edge rendering and iOS safe areas, featuring a modernized floating navigation design and immersive editor experience.",
+      changes: [
+        { text: "Foundation & Core Logic", type: "section" },
+        { text: "Enabled Edge-to-Edge mode allowing content to flow behind system bars", type: "improvement" },
+        { text: "Configured global transparent status and navigation bars", type: "improvement" },
+        { text: "Resolved 'SystemChrome' undefined name errors in core logic", type: "fix" },
+
+        { text: "Android Native Optimization", type: "section" },
+        { text: "Disabled navigation bar contrast for Android 11+ to prevent forced backgrounds", type: "fix" },
+        { text: "Updated native window flags for full transparency and engine control", type: "improvement" },
+
+        { text: "Navigation & Layout", type: "section" },
+        { text: "Adaptive SafeArea integration for the custom bottom navigation bar", type: "improvement" },
+        { text: "Redesigned navbar with a modern floating effect (64px height, 30px radius)", type: "improvement" },
+        { text: "Optimized keyboard interactivity to maximize screen real estate during editing", type: "improvement" },
+
+        { text: "Immersive Note Editor", type: "section" },
+        { text: "Unified editor theme with global transparent navigation styles", type: "improvement" },
+        { text: "Fixed system bar flickering during screen transitions", type: "fix" }
+      ],
+      type: "Major Update"
+    },
     {
       version: "v1.6.0",
       date: "March 22, 2026",
@@ -16,7 +60,7 @@ export default function ChangelogPage() {
         { text: "Tasks now default to \"None\" priority (previously \"Medium\")", type: "improvement" },
         { text: "Migrated all existing \"Medium\" priority tasks to \"None\"", type: "improvement" },
         { text: "Hidden priority pill/ring on cards when priority is \"None\"", type: "improvement" },
-        
+
         { text: "Overdue Page – Header", type: "section" },
         { text: "Centered the \"Overdue\" title", type: "improvement" },
         { text: "Replaced task counter badge with hamburger menu icon", type: "improvement" },
@@ -45,11 +89,11 @@ export default function ChangelogPage() {
         { text: "Unified Layout Engine", type: "section" },
         { text: "Integrated tasks and events into a single mathematical collision engine to eliminate messy overlaps", type: "improvement" },
         { text: "Dynamically multiplied Task column width weight to 3.0x to command more screen space", type: "improvement" },
-        
+
         { text: "Grid & Scroll Enhancements", type: "section" },
         { text: "Introduced a Bounded Inner Scroll allowing infinite tasks to sit in an isolated micro-scroll window confined to their hour block", type: "improvement" },
         { text: "Removed hidden minimum width constraints to restore a proportional edge-to-edge gap grid for heavily packed events", type: "fix" },
-        
+
         { text: "Responsive Density Controls", type: "section" },
         { text: "Enforced dynamic width constraints on task chips based on screen real estate, preventing single long tasks from hoarding entire rows", type: "fix" },
         { text: "Optimized narrow events with reduced 2px padding and explicit maximum line constraints", type: "improvement" },
@@ -69,7 +113,7 @@ export default function ChangelogPage() {
         { text: "Precision drag & drop snapping to timeline grid with elegant visual feedback", type: "improvement" },
         { text: "Refined hourly spacing and timing indicators for a perfectly balanced view", type: "improvement" },
         { text: "Quick-create via empty slot tapping with intelligent bottom sheet fast-actions", type: "improvement" },
-        
+
         { text: "View Event Page", type: "section" },
         { text: "Optimized read-only event detail view for faster quick-glancing", type: "improvement" },
         { text: "Enhanced typography and layout spacing for long event descriptions", type: "improvement" },
@@ -158,7 +202,7 @@ export default function ChangelogPage() {
   return (
     <main className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      
+
       {/* Background Decor */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[#537DF9]/5 blur-[120px]" />
@@ -193,7 +237,7 @@ export default function ChangelogPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-2.5 bg-[#FAFAFA] hover:bg-gray-100 text-base font-semibold text-black rounded-full border border-gray-200/80 transition-colors"
-               >
+              >
                 Follow us on X
               </a>
             </motion.div>
@@ -201,7 +245,7 @@ export default function ChangelogPage() {
 
           <div className="max-w-5xl mx-auto space-y-32 relative">
             {updates.map((update, index) => (
-              <motion.section 
+              <motion.section
                 key={update.version}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -218,10 +262,10 @@ export default function ChangelogPage() {
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <span className="text-[10px] font-black bg-black text-white px-2 py-0.5 rounded uppercase tracking-widest self-start">
-                    {update.version}
+                      {update.version}
                     </span>
                     <span className="text-[10px] font-black border border-black/10 text-black/50 px-2 py-0.5 rounded uppercase tracking-widest self-start">
-                    {update.type}
+                      {update.type}
                     </span>
                   </div>
                 </div>
@@ -239,11 +283,11 @@ export default function ChangelogPage() {
 
                   <div className="glass p-8 md:p-10 rounded-[32px] premium-shadow">
                     <ul className="space-y-6">
-                      {update.changes.map((change: any, i: number) => {
+                      {update.changes.map((change: ChangeEntry, i: number) => {
                         const isString = typeof change === "string";
                         const text = isString ? change : change.text;
                         const type = isString ? "improvement" : change.type || "improvement";
-                        
+
                         if (type === "section") {
                           return (
                             <li key={i} className={`pt-2 pb-1 ${i === 0 ? "" : "mt-2"}`}>
@@ -270,7 +314,7 @@ export default function ChangelogPage() {
 
         </div>
       </div>
-      
+
       <Footer />
     </main>
   );
