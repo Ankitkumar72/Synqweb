@@ -106,7 +106,7 @@ export default function RefundPage() {
             </section>
 
             <section className="bg-gray-50 p-8 rounded-2xl">
-              <h2 className="text-[26px] font-bold text-black mb-4 italic">H. Contact Information</h2>
+              <h2 className="text-[26px] font-bold text-black mb-4 italic">Contact Information</h2>
               <p className="mb-2 text-lg text-gray-600 italic">If you have questions about this Refund Policy or would like to request a refund, please contact:</p>
               <p className="font-bold text-xl text-black">
                 Email: <a href="mailto:synq.app.labs@gmail.com" className="text-blue-600 hover:underline">synq.app.labs@gmail.com</a>
