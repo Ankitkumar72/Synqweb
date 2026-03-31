@@ -25,6 +25,22 @@ type ChangelogUpdate = {
 export default function ChangelogPage() {
   const updates: ChangelogUpdate[] = [
     {
+      version: "v1.8.0",
+      date: "March 30, 2026",
+      title: "Top App Quality: Premium Splash & Loading Experience",
+      description: "A high-fidelity startup experience featuring an 'Alive' animated logo, smart data-fetching synchronization, and ultra-smooth UI transitions.",
+      changes: [
+        { text: "Visual Identity & Branding", type: "section" },
+        { text: "Configured a solid white (#FFFFFF) native launch screen for a clean, zero-blink app startup", type: "improvement" },
+        { text: "Re-engineered the logo with a smooth fade-in and a subtle 1.1x pulsing scale animation", type: "improvement" },
+
+        { text: "Performance & Synchronization", type: "section" },
+        { text: "Integrated 'Ready & Loaded' check to sync splash screen with background data fetching (Notes & Tasks)", type: "improvement" },
+        { text: "Added a 400ms premium cross-fade transition between the splash and dashboard", type: "improvement" }
+      ],
+      type: "Major Update"
+    },
+    {
       version: "v1.7.0",
       date: "March 30, 2026",
       title: "Adaptive Edge-to-Edge UI & System Integration",
