@@ -15,6 +15,7 @@ export default function PricingSection() {
       description: "Perfect for individuals starting their focus journey.",
       features: ["Unlimited tasks", "3 workspaces", "Basic focus timer", "Community access"],
       button: "Get Started",
+      link: "https://synq-desktop.vercel.app/",
       disabled: false,
       popular: false
     },
@@ -134,6 +135,11 @@ export default function PricingSection() {
 
               <button
                 disabled={plan.disabled}
+                onClick={() => {
+                  if (plan.link) {
+                    window.open(plan.link, "_blank", "noopener,noreferrer");
+                  }
+                }}
                 className={`w-full py-4 rounded-2xl font-bold transition-all ${plan.popular
                   ? (plan.disabled
                     ? 'bg-foreground/5 text-foreground/40 cursor-not-allowed border border-foreground/10'
