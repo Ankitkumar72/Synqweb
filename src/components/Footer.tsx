@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   const footerLinks = {
     Product: ["Features", "Pricing"],
-    Resources: ["Changelog", "Support"],
+    Resources: ["Changelog", "Support", "Security"],
     Legal: ["Privacy", "Terms", "Refund"]
   };
 
@@ -58,17 +58,19 @@ const Footer = () => {
                     ? "/changelog"
                     : link === "Support"
                       ? "/support"
-                      : link === "Privacy"
-                        ? "/privacy"
-                        : link === "Terms"
-                          ? "/terms"
-                          : link === "Refund"
-                            ? "/refund"
-                            : link === "Pricing"
-                              ? "/#pricing"
-                              : link === "Features"
-                                ? "/#product"
-                                : "#";
+                      : link === "Security"
+                        ? "/security"
+                        : link === "Privacy"
+                          ? "/privacy"
+                          : link === "Terms"
+                            ? "/terms"
+                            : link === "Refund"
+                              ? "/refund"
+                              : link === "Pricing"
+                                ? "/#pricing"
+                                : link === "Features"
+                                  ? "/#product"
+                                  : "#";
                   return (
                     <li key={link}>
                       <Link href={href} className="text-sm font-medium text-foreground/60 hover:text-primary transition-colors">{link}</Link>
